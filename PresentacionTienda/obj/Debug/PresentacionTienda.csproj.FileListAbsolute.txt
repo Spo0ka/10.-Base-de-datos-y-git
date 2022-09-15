@@ -1,0 +1,3 @@
+C:\Users\Spo0k\source\repos\PresentacionTienda\PresentacionTienda\obj\Debug\PresentacionTienda.csproj.AssemblyReference.cache
+C:\Users\Spo0k\source\repos\PresentacionTienda\PresentacionTienda\obj\Debug\PresentacionTienda.csproj.SuggestedBindingRedirects.cache
+C:\Users\Spo0k\source\repos\PresentacionTienda\PresentacionTienda\obj\Debug\PresentacionTienda.csproj.CoreCompileInputs.cache
