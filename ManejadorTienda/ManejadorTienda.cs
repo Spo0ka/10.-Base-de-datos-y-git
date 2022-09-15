@@ -12,6 +12,8 @@ namespace ManejadorTienda
 {
     public class ManejadorTienda
     {
-       
+        
     }
+
+   
 }
