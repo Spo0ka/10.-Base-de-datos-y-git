@@ -84,5 +84,15 @@
   <ItemGroup>
     <None Include="Resources\Salir.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntidadesTienda\EntidadesTienda.csproj">
+      <Project>{5fb79c1a-2246-41eb-b13e-8340835cb533}</Project>
+      <Name>EntidadesTienda</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ManejadorTienda\ManejadorTienda.csproj">
+      <Project>{685fe10e-ea95-4017-95d6-da1907378b7c}</Project>
+      <Name>ManejadorTienda</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

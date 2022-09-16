@@ -7,12 +7,14 @@ using EntidadesTienda;
 using AccesodDatosTienda;
 using System.Windows.Forms;
 using System.Drawing;
+using crud;
 
 namespace ManejadorTienda
 {
-    public class ManejadorTienda
+    public class ManejadorTiendas
     {
         AccesoTienda At = new AccesoTienda();
+        Grafico g = new Grafico();
         public void GuardarProducto(dynamic Entidad)
         {
             At.Guardar(Entidad);
@@ -22,18 +24,15 @@ namespace ManejadorTienda
         {
             Tabla.Columns.Clear();
             Tabla.RowTemplate.Height = 30;
-            Tabla.DataSource = At.Mostrar(Buscar).Tables["Producto"];
-            DataGridViewButtonColumn bc = new DataGridViewButtonColumn();
-            bc.Text = "Eliminar"; bc.DefaultCellStyle.BackColor = Color.Red;
-            DataGridViewButtonColumn be = new DataGridViewButtonColumn();
-            bc.Text = "Editar"; be.DefaultCellStyle.BackColor = Color.Green;
-            Tabla.Columns.Insert(4, be); Tabla.Columns.Insert(5, bc);
+            Tabla.DataSource = At.Mostrar(Buscar).Tables["producto"];
+            Tabla.Columns.Insert(4,g.Boton("Editar",Color.Green));
+            Tabla.Columns.Insert(5, g.Boton("Eliminar", Color.Red));
             Tabla.Columns[0].Visible = false;
         }
 
         public void eliminar(dynamic Entidad)
         {
-            DialogResult rs = MessageBox.Show("Atencion!", "Esta seguro de borrar?", MessageBoxButtons.YesNo);
+            DialogResult rs = MessageBox.Show( "Esta seguro de borrar?", "Atencion!", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
             {
                 At.Eliminar(Entidad);

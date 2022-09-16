@@ -10,20 +10,20 @@ namespace AccesodDatosTienda
 {
     public class AccesoTienda
     {
-        Base b = new Base("Localhost", "Root", "", "Tienda");
+        Base b = new Base("Localhost","root", "", "tienda");
 
         public void Guardar(dynamic Entidad)
         {
-            b.comando(String.Format("call insertarProducto({0},'{1}','{2}',{3})", Entidad.Idproducto,
+            b.comando(String.Format("CALL insertarProducto({0},'{1}','{2}',{3})", Entidad.Idproducto,
                 Entidad.Nombre, Entidad.Descripcion, Entidad.Precio));
         }
-        public DataSet Mostrar(dynamic Entidad)
+        public DataSet Mostrar(string filtro)
         {
-            return b.Obtener(String.Format("call showproducto('{0}')", Entidad.Nombre), "Producto");
+            return b.Obtener(String.Format("CALL showproducto('%{0}%')", filtro), "producto");
         }
         public void Eliminar(dynamic Entidad)
         {
-            b.comando(String.Format("call deleteproducto({0})", Entidad.Idproducto));
+            b.comando(String.Format("CALL deleteproducto({0})", Entidad.Idproducto));
         }
     }
 }
